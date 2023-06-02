@@ -1,0 +1,2 @@
+(this["webpackJsonpeliftech-app"]=this["webpackJsonpeliftech-app"]||[]).push([[0],{113:function(n,e,t){n.exports={heading:"NotFound_heading__2176r"}},116:function(n,e,t){"use strict";t.r(e),t.d(e,"default",(function(){return s}));var c=t(113),i=t.n(c),r=t(1);function a(){return Object(r.jsx)(r.Fragment,{children:Object(r.jsx)("h2",{className:i.a.heading,children:"404 Page not found!"})})}function s(){return Object(r.jsx)(r.Fragment,{children:Object(r.jsx)(a,{})})}}}]);
+//# sourceMappingURL=NotFoundView.73b61789.chunk.js.map
