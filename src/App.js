@@ -37,7 +37,7 @@ function App() {
         <Container>
           <Suspense fallback={<Spinner animation="border" variant="primary" />}>
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/eliftech-app/">
                 <ShopPageView />
               </Route>
 

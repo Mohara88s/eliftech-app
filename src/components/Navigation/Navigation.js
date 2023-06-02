@@ -8,7 +8,7 @@ const Navigation = () => {
         <li className={styles.NavigationList__item}>
           <NavLink
             exact
-            to="/"
+            to="/eliftech-app/"
             className={styles.link}
             activeClassName={styles.activeLink}
           >
