@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Form, Spinner } from 'react-bootstrap';
+import {  Form } from 'react-bootstrap';
 import ordersSelectors from '../../redux/orders/orders-selectors';
 
 import { changeName, changeEmail, changePhone, changeAddress} from '../../redux/orders/orders-actions';

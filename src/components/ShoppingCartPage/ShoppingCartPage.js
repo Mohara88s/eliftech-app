@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import CartGoods from '../CartGoods/CartGoods';
 import OrderForm from '../OrderForm/OrderForm';
 

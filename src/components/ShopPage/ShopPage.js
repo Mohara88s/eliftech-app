@@ -15,7 +15,6 @@ export default function ShopPage() {
   }, []);
 
   const dispatch = useDispatch();
-  const actualShop = useSelector(shopsSelectors.getActualShop);
   const shops = useSelector(shopsSelectors.getShops);
 
   useEffect(() => {
@@ -24,8 +23,7 @@ export default function ShopPage() {
 
   useEffect(() => {
     dispatch(setActualShop(shops.find(e => e._id === shops[0]._id)))
-
-  }, [shops]);
+  }, [shops, dispatch]);
   return (
     <div>
       <ul className={styles.AreasList}>
