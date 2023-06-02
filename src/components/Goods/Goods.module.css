@@ -1,0 +1,14 @@
+.GoodsList {
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  height: 80vh;
+}
+.GoodsList__Item {
+  margin: 10px;
+}
+.Card {
+  width: 25vw;
+  padding: 10px;
+}

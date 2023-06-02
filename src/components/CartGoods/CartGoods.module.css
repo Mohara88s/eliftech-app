@@ -1,0 +1,24 @@
+.CartGoodsList {
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  height: 70vh;
+}
+.CartGoodsList__Item {
+  margin: 10px;
+  width: 100%;
+}
+.Card {
+flex-direction: row;
+width: 100%;
+padding: 10px;
+}
+.Card__Img {
+  width: 50%;
+}
+.Card__Body{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

@@ -1,0 +1,7 @@
+.AreasList {
+    display: flex;
+    justify-content: space-between;
+  }
+  .AreasList__Item {
+    width: 48%;
+  }

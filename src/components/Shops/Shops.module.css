@@ -1,0 +1,16 @@
+.Shops {
+  width: 200px;
+  margin-right: 50px;
+}
+.ShopsList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.ShopsList__Item {
+  margin-bottom: 15px;
+}
+.ShopsList__Button {
+  width: 100%;
+  height: 50px;
+}
