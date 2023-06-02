@@ -1,7 +1,7 @@
 {
   "name": "eliftech-app",
   "version": "0.1.0",
-  "homepage": "https://Mohara88s.github.io/eliftech-app",
+  "homepage": "https://Mohara88s.github.io/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
