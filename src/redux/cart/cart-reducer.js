@@ -2,11 +2,10 @@ import {
   addToCart,
   removeFromCart,
   clearCart,
-  updateCart
+  updateCart,
 } from './cart-actions';
-import {
-  setActualShop
-} from '../shops/shops-actions';
+import { addOrderSuccess } from '../orders/orders-actions';
+import { setActualShop } from '../shops/shops-actions';
 import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
 
@@ -20,13 +19,14 @@ const cart = createReducer([], {
   [updateCart]: (state, { payload }) => {
     return state.map(item => {
       if (item.good._id === payload._id) {
-        return { good: { ...item.good }, quantity: payload.quantity }
-      } else return item
-    })
+        return { good: { ...item.good }, quantity: payload.quantity };
+      } else return item;
+    });
   },
   [setActualShop]: () => [],
+  [addOrderSuccess]: () => [],
 });
 
 export default combineReducers({
-  cart
+  cart,
 });

@@ -52,15 +52,19 @@ const ordersError = createReducer(null, {
 
 const name = createReducer('', {
   [changeName]: (_, { payload }) => payload,
+  [addOrderSuccess]: () => '',
 });
 const email = createReducer('', {
   [changeEmail]: (_, { payload }) => payload,
+  [addOrderSuccess]: () => '',
 });
 const phone = createReducer('', {
   [changePhone]: (_, { payload }) => payload,
+  [addOrderSuccess]: () => '',
 });
 const address = createReducer('', {
   [changeAddress]: (_, { payload }) => payload,
+  [addOrderSuccess]: () => '',
 });
 
 export default combineReducers({
