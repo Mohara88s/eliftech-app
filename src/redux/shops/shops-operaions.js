@@ -5,8 +5,8 @@ import {
 } from './shops-actions';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://127.0.0.1:3000/api';
-// axios.defaults.baseURL = 'https://server-production.up.railway.app/api';
+// axios.defaults.baseURL = 'http://127.0.0.1:3000/api';
+axios.defaults.baseURL = 'https://eliftech-server-production.up.railway.app/api';
 
 export const fetchShops = () => async dispatch => {
   dispatch(fetchShopsRequest());
