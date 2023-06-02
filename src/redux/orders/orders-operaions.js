@@ -5,6 +5,9 @@ import {
   fetchOrdersRequest,
   fetchOrdersSuccess,
   fetchOrdersError,
+  fetchOrderByIdRequest,
+  fetchOrderByIdSuccess,
+  fetchOrderByIdError,
 } from './orders-actions';
 import axios from 'axios';
 
@@ -18,14 +21,27 @@ export const addOrder = order => async dispatch => {
   }
 };
 
-export const fetchOrders = () => async dispatch => {
-  dispatch(fetchOrdersRequest());
+export const fetchOrders =
+  ({ orderEmail = '', orderPhone = '' }) =>
+  async dispatch => {
+    dispatch(fetchOrdersRequest());
+    try {
+      const { data } = await axios.get(
+        `/orders?page=1&limit=10&email=${orderEmail}&phone=${orderPhone}`,
+      );
+      console.log(data);
+      dispatch(fetchOrdersSuccess(data.orders));
+    } catch (error) {
+      dispatch(fetchOrdersError(error.response.data.message));
+    }
+  };
+
+export const fetchOrderById = orderId => async dispatch => {
+  dispatch(fetchOrderByIdRequest());
   try {
-    const { data } = await axios.get(
-      `/orders`,
-    );
-    dispatch(fetchOrdersSuccess(data.shops));
+    const { data } = await axios.get(`/orders/${orderId}`);
+    dispatch(fetchOrderByIdSuccess(data.order));
   } catch (error) {
-    dispatch(fetchOrdersError(error.response.data.message));
+    dispatch(fetchOrderByIdError(error.response.data.message));
   }
 };

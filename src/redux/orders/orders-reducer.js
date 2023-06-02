@@ -5,10 +5,13 @@ import {
   fetchOrdersRequest,
   fetchOrdersSuccess,
   fetchOrdersError,
+  fetchOrderByIdRequest,
+  fetchOrderByIdSuccess,
+  fetchOrderByIdError,
   changeName,
   changeEmail,
   changePhone,
-  changeAddress
+  changeAddress,
 } from './orders-actions';
 import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
@@ -24,21 +27,27 @@ const addOrderErrors = createReducer(null, {
   [addOrderRequest]: () => null,
 });
 
-
 const orders = createReducer([], {
-  [fetchOrdersSuccess]: (_, { payload }) => payload,
+  [fetchOrdersSuccess]: (_, { payload }) => [...payload],
+  [fetchOrderByIdSuccess]: (_, { payload }) => [payload],
   [fetchOrdersError]: () => [],
+  [fetchOrderByIdError]: () => [],
 });
 
 const ordersLoading = createReducer(false, {
   [fetchOrdersRequest]: () => true,
   [fetchOrdersSuccess]: () => false,
   [fetchOrdersError]: () => false,
+  [fetchOrderByIdRequest]: () => true,
+  [fetchOrderByIdSuccess]: () => false,
+  [fetchOrderByIdError]: () => false,
 });
 
 const ordersError = createReducer(null, {
   [fetchOrdersError]: (_, { payload }) => payload,
+  [fetchOrderByIdError]: (_, { payload }) => payload,
   [fetchOrdersRequest]: () => null,
+  [fetchOrderByIdRequest]: () => null,
 });
 
 const name = createReducer('', {

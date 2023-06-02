@@ -7,11 +7,10 @@ import cartSelectors from '../../redux/cart/cart-selectors';
 import shopsSelectors from '../../redux/shops/shops-selectors';
 
 import { removeFromCart, updateCart } from '../../redux/cart/cart-actions';
-import { addOrder, } from '../../redux/orders/orders-operaions';
+import { addOrder } from '../../redux/orders/orders-operaions';
 
 import plug from '../../public/pictures/1.jpg';
 import styles from './CartGoods.module.css';
-
 
 export default function CartGoods() {
   const dispatch = useDispatch();
@@ -24,24 +23,30 @@ export default function CartGoods() {
   const shop = useSelector(shopsSelectors.getActualShop);
 
   const handleChange = ({ target: { name, value } }) => {
-    const quantity = Number(value)
-    console.log(value)
+    const quantity = Number(value);
+    console.log(value);
     if (quantity === 0) {
-      dispatch(removeFromCart({ _id: name }))
+      dispatch(removeFromCart({ _id: name }));
     } else {
-      dispatch(updateCart({ _id: name, quantity }))
+      dispatch(updateCart({ _id: name, quantity }));
     }
   };
 
   useEffect(() => {
-    setTotalPrice(cart.reduce((total, e) => {
-      return total + e.quantity * e.good.price;
-    }, 0).toFixed(2))
+    setTotalPrice(
+      cart
+        .reduce((total, e) => {
+          return total + e.quantity * e.good.price;
+        }, 0)
+        .toFixed(2),
+    );
   }, [cart]);
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(addOrder({ name, email, phone, address, shop, price: totalPrice, cart }));
+    dispatch(
+      addOrder({ name, email, phone, address, shop, price: totalPrice, cart }),
+    );
   };
 
   return (
@@ -50,12 +55,15 @@ export default function CartGoods() {
         {cart.map(e => (
           <li key={e.good._id} className={styles.CartGoodsList__Item}>
             <Card className={styles.Card} border="primary">
-              <Card.Img src={plug} className={styles.Card__Img} />
+              <Card.Img
+                src={e.good.picture ? e.good.picture : plug}
+                className={styles.Card__Img}
+              />
               <Card.Body className={styles.Card__Body}>
-                <Card.Title className={styles.Card__Title}>{e.good.name}</Card.Title>
-                <Card.Text>
-                  Price: {e.good.price}
-                </Card.Text>
+                <Card.Title className={styles.Card__Title}>
+                  {e.good.name}
+                </Card.Title>
+                <Card.Text>Price: {e.good.price}</Card.Text>
                 <InputGroup>
                   <Form.Control
                     value={e.quantity}

@@ -12,7 +12,6 @@ import Message from '../Message/Message';
 import plug from '../../public/pictures/1.jpg';
 import styles from './Goods.module.css';
 
-
 export default function Goods() {
   const dispatch = useDispatch();
   const actualShop = useSelector(shopsSelectors.getActualShop);
@@ -29,38 +28,42 @@ export default function Goods() {
 
   const onClickGoodButton = e => {
     const { value } = e.currentTarget;
-    if (cart.findIndex(e=> e._id === value) === -1) {
-      dispatch(addToCart({good:{...actualShop.goods.find(e => e._id === value)}, quantity:1 }))
+    if (cart.findIndex(e => e.good._id === value) === -1) {
+      dispatch(
+        addToCart({
+          good: { ...actualShop.goods.find(e => e._id === value) },
+          quantity: 1,
+        }),
+      );
     }
   };
 
   return (
-
     <ul className={styles.GoodsList}>
-      {actualShop && (actualShop.goods.map(e => (
-        <li key={e._id} className={styles.GoodsList__Item}>
-          <Card border="primary" className={styles.Card}>
-            <Card.Img variant="top" src={plug} />
-            <Card.Body>
-              <Card.Title>{e.name}</Card.Title>
-              <Card.Text>
-                Price: {e.price}
-              </Card.Text>
-              <Button variant="primary"
-                onClick={onClickGoodButton}
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-                value={e._id}
-              >
-                add to Cart
-              </Button>
-              {(isHoveringBtnId === e._id) && (<Message message={`You can add this ${e.name} to the cart`} />
-              )}
-            </Card.Body>
-          </Card>
-        </li>
-      )))}
-
+      {actualShop &&
+        actualShop.goods.map(e => (
+          <li key={e._id} className={styles.GoodsList__Item}>
+            <Card border="primary" className={styles.Card}>
+              <Card.Img variant="top" src={e.picture ? e.picture : plug} />
+              <Card.Body>
+                <Card.Title>{e.name}</Card.Title>
+                <Card.Text>Price: {e.price}</Card.Text>
+                <Button
+                  variant="primary"
+                  onClick={onClickGoodButton}
+                  onMouseOver={handleMouseOver}
+                  onMouseOut={handleMouseOut}
+                  value={e._id}
+                >
+                  add to Cart
+                </Button>
+                {isHoveringBtnId === e._id && (
+                  <Message message={`You can add this ${e.name} to the cart`} />
+                )}
+              </Card.Body>
+            </Card>
+          </li>
+        ))}
     </ul>
   );
 }
