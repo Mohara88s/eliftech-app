@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/NotFound/NotFound.module.css"],"names":[],"mappings":"AAAA,yBACE,SACF","file":"NotFoundView.fdf24a87.chunk.css","sourcesContent":[".heading {\r\n  color: red;\r\n}\r\n"]}
