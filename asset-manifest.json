@@ -11,13 +11,13 @@
     "NotFoundView.js": "/eliftech-app/static/js/NotFoundView.3a2b4c03.chunk.js",
     "NotFoundView.js.map": "/eliftech-app/static/js/NotFoundView.3a2b4c03.chunk.js.map",
     "ShoppingCartView.css": "/eliftech-app/static/css/ShoppingCartView.4a1d1d8c.chunk.css",
-    "ShoppingCartView.js": "/eliftech-app/static/js/ShoppingCartView.a7aa7ed8.chunk.js",
-    "ShoppingCartView.js.map": "/eliftech-app/static/js/ShoppingCartView.a7aa7ed8.chunk.js.map",
-    "main.css": "/eliftech-app/static/css/main.a2691caf.chunk.css",
-    "main.js": "/eliftech-app/static/js/main.92932829.chunk.js",
-    "main.js.map": "/eliftech-app/static/js/main.92932829.chunk.js.map",
-    "runtime-main.js": "/eliftech-app/static/js/runtime-main.678fc679.js",
-    "runtime-main.js.map": "/eliftech-app/static/js/runtime-main.678fc679.js.map",
+    "ShoppingCartView.js": "/eliftech-app/static/js/ShoppingCartView.a012779f.chunk.js",
+    "ShoppingCartView.js.map": "/eliftech-app/static/js/ShoppingCartView.a012779f.chunk.js.map",
+    "main.css": "/eliftech-app/static/css/main.952fc832.chunk.css",
+    "main.js": "/eliftech-app/static/js/main.ff7c9d57.chunk.js",
+    "main.js.map": "/eliftech-app/static/js/main.ff7c9d57.chunk.js.map",
+    "runtime-main.js": "/eliftech-app/static/js/runtime-main.8e171a6d.js",
+    "runtime-main.js.map": "/eliftech-app/static/js/runtime-main.8e171a6d.js.map",
     "static/css/7.b229021b.chunk.css": "/eliftech-app/static/css/7.b229021b.chunk.css",
     "static/js/7.2c9eecd9.chunk.js": "/eliftech-app/static/js/7.2c9eecd9.chunk.js",
     "static/js/7.2c9eecd9.chunk.js.map": "/eliftech-app/static/js/7.2c9eecd9.chunk.js.map",
@@ -26,15 +26,15 @@
     "static/css/HistoryView.15190c87.chunk.css.map": "/eliftech-app/static/css/HistoryView.15190c87.chunk.css.map",
     "static/css/NotFoundView.fdf24a87.chunk.css.map": "/eliftech-app/static/css/NotFoundView.fdf24a87.chunk.css.map",
     "static/css/ShoppingCartView.4a1d1d8c.chunk.css.map": "/eliftech-app/static/css/ShoppingCartView.4a1d1d8c.chunk.css.map",
-    "static/css/main.a2691caf.chunk.css.map": "/eliftech-app/static/css/main.a2691caf.chunk.css.map",
+    "static/css/main.952fc832.chunk.css.map": "/eliftech-app/static/css/main.952fc832.chunk.css.map",
     "static/js/7.2c9eecd9.chunk.js.LICENSE.txt": "/eliftech-app/static/js/7.2c9eecd9.chunk.js.LICENSE.txt",
     "static/media/1.jpg": "/eliftech-app/static/media/1.eb88e210.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.678fc679.js",
+    "static/js/runtime-main.8e171a6d.js",
     "static/css/7.b229021b.chunk.css",
     "static/js/7.2c9eecd9.chunk.js",
-    "static/css/main.a2691caf.chunk.css",
-    "static/js/main.92932829.chunk.js"
+    "static/css/main.952fc832.chunk.css",
+    "static/js/main.ff7c9d57.chunk.js"
   ]
 }
