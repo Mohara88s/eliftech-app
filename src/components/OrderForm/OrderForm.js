@@ -1,4 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
+import React, { useCallback, useState, useEffect } from 'react';
+import { GoogleMapsProvider } from '@ubilabs/google-maps-react-hooks';
+
 import ordersSelectors from '../../redux/orders/orders-selectors';
 import {
   changeName,
@@ -13,6 +16,43 @@ import styles from './OrderForm.module.css';
 
 export default function OrderForm() {
   const dispatch = useDispatch();
+  const [mapContainer, setMapContainer] = useState(null);
+  const [latitude, setLatitude] = useState(53.5582447);
+  const [longitude, setLongitude] = useState(9.647645);
+  const mapRef = useCallback(node => {
+    node && setMapContainer(node);
+  }, []);
+
+  const findMyCoordinates = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          setLatitude(position.coords.latitude);
+          setLongitude(position.coords.longitude);
+          console.log(position.coords.latitude, position.coords.longitude);
+        },
+        err => {
+          alert(err.message);
+        },
+      );
+    } else {
+      alert('Geolocation is not supported by your browser');
+    }
+  };
+
+  useEffect(() => {
+    findMyCoordinates();
+  }, []);
+
+  const mapOptions = {
+    center: { lat: latitude, lng: longitude },
+    zoom: 14,
+    disableDefaultUI: true,
+    zoomControl: true,
+    zoomControlOptions: {
+      position: 0, // Right top
+    },
+  };
 
   const name = useSelector(ordersSelectors.getName);
   const email = useSelector(ordersSelectors.getEmail);
@@ -36,18 +76,19 @@ export default function OrderForm() {
     }
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    // dispatch(addOrder({ name, email, phone, address, shop, price, cart }));
-    // setName('');
-    // setEmail('');
-    // setPhone('');
-    // setAddress('');
-  };
-
   return (
     <div>
-      <Form className={styles.form} onSubmit={handleSubmit}>
+      <GoogleMapsProvider
+        googleMapsAPIKey="AIzaSyBJj2Hri6OYehvSzAyAgRYR5BxF5JwOHb4"
+        mapContainer={mapContainer}
+        mapOptions={mapOptions}
+      >
+        <React.StrictMode>
+          <div ref={mapRef} style={{ height: '300px' }} />
+        </React.StrictMode>
+      </GoogleMapsProvider>
+
+      <Form className={styles.form}>
         <Form.Group className="mb-3" controlId="name">
           <Form.Label>Name</Form.Label>
           <Form.Control
