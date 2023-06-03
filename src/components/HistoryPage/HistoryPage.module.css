@@ -14,3 +14,7 @@
   width: 140px;
   margin-bottom: 10px;
 }
+
+.Table .Table__tbody {
+  border-top: 0px;
+}

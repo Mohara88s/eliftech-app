@@ -119,10 +119,7 @@ export default function HistoryPage() {
           {ordersLoading && <Spinner animation="border" as="span" size="sm" />}
         </Button>
       </Form>
-
-      {ordersError && <ErrorMessage message={`No data by your query`} />}
-
-      <Table striped bordered hover>
+      <Table striped bordered hover className={styles.Table}>
         <thead>
           <tr>
             <td>orders id</td>
@@ -134,7 +131,7 @@ export default function HistoryPage() {
             <td>date</td>
           </tr>
         </thead>
-        <tbody>
+        <tbody className={styles.Table__tbody}>
           {orders.map(e => (
             <tr key={e._id}>
               <td>{e._id}</td>
@@ -151,6 +148,7 @@ export default function HistoryPage() {
           ))}
         </tbody>
       </Table>
+      {ordersError && <ErrorMessage message={`No data by your query`} />}
     </div>
   );
 }
