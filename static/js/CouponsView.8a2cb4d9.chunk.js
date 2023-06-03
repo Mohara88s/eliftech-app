@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkeliftech_app=self.webpackChunkeliftech_app||[]).push([[965],{1007:function(e,n,t){t.r(n),t.d(n,{default:function(){return r}});var c=t(184);function r(){return(0,c.jsx)(c.Fragment,{children:(0,c.jsx)("h2",{children:"Under maintenance"})})}}}]);
+//# sourceMappingURL=CouponsView.8a2cb4d9.chunk.js.map

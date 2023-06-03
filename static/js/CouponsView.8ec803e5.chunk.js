@@ -1,2 +1,0 @@
-(this["webpackJsonpeliftech-app"]=this["webpackJsonpeliftech-app"]||[]).push([[1],{119:function(e,n,t){"use strict";t.r(n),t.d(n,"default",(function(){return i}));var c=t(1);function i(){return Object(c.jsx)(c.Fragment,{children:Object(c.jsx)("h2",{children:"Under maintenance"})})}}}]);
-//# sourceMappingURL=CouponsView.8ec803e5.chunk.js.map
