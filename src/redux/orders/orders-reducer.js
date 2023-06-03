@@ -16,6 +16,15 @@ import {
 import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
 
+const addedOrder = createReducer(
+  {},
+  {
+    [addOrderSuccess]: (_, { payload }) => payload,
+    [addOrderRequest]: () => {},
+    [addOrderError]: () => {},
+  },
+);
+
 const addOrderLoading = createReducer(false, {
   [addOrderRequest]: () => true,
   [addOrderSuccess]: () => false,
@@ -68,6 +77,7 @@ const address = createReducer('', {
 });
 
 export default combineReducers({
+  addedOrder,
   addOrderLoading,
   addOrderErrors,
   orders,

@@ -1,10 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux';
-import {  Form } from 'react-bootstrap';
 import ordersSelectors from '../../redux/orders/orders-selectors';
+import {
+  changeName,
+  changeEmail,
+  changePhone,
+  changeAddress,
+} from '../../redux/orders/orders-actions';
+import { Form } from 'react-bootstrap';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
-import { changeName, changeEmail, changePhone, changeAddress} from '../../redux/orders/orders-actions';
 import styles from './OrderForm.module.css';
-
 
 export default function OrderForm() {
   const dispatch = useDispatch();
@@ -13,6 +18,8 @@ export default function OrderForm() {
   const email = useSelector(ordersSelectors.getEmail);
   const phone = useSelector(ordersSelectors.getPhone);
   const address = useSelector(ordersSelectors.getAddresss);
+  const addOrderError = useSelector(ordersSelectors.getAddOrderErrors);
+  const addedOrder = useSelector(ordersSelectors.getAddedOrder);
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -66,8 +73,10 @@ export default function OrderForm() {
         <Form.Group className="mb-3" controlId="phone">
           <Form.Label>Phone</Form.Label>
           <Form.Control
-            type="phone"
+            type="tel"
             name="phone"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            title="XXX-XXX-XXXX"
             placeholder="Enter your phone"
             value={phone}
             onChange={handleChange}
@@ -84,8 +93,11 @@ export default function OrderForm() {
             onChange={handleChange}
           />
         </Form.Group>
-        
       </Form>
+      {addOrderError && <ErrorMessage message={addOrderError} />}
+      {addedOrder._id && (
+        <h2>{`Thank you for your order. Orders Id=${addedOrder._id}`}</h2>
+      )}
     </div>
   );
 }

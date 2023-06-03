@@ -29,7 +29,6 @@ export const fetchOrders =
       const { data } = await axios.get(
         `/orders?page=1&limit=10&email=${orderEmail}&phone=${orderPhone}`,
       );
-      console.log(data);
       dispatch(fetchOrdersSuccess(data.orders));
     } catch (error) {
       dispatch(fetchOrdersError(error.response.data.message));

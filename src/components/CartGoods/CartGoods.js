@@ -24,7 +24,6 @@ export default function CartGoods() {
 
   const handleChange = ({ target: { name, value } }) => {
     const quantity = Number(value);
-    console.log(value);
     if (quantity === 0) {
       dispatch(removeFromCart({ _id: name }));
     } else {
@@ -78,7 +77,7 @@ export default function CartGoods() {
         ))}
       </ul>
       <h3>Total price: {totalPrice}</h3>
-      <Button className={styles.button} onClick={handleSubmit}>
+      <Button className={styles.button} onClick={handleSubmit} type="submit">
         Submit
       </Button>
     </div>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Form, Table, Spinner } from 'react-bootstrap';
 import {
@@ -19,9 +19,6 @@ export default function HistoryPage() {
   const orders = useSelector(ordersSelectors.getOrders);
   const ordersError = useSelector(ordersSelectors.getOrdersError);
   const ordersLoading = useSelector(ordersSelectors.getOrdersLoading);
-  useEffect(() => {
-    console.log(orders);
-  }, [orders]);
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -36,8 +33,9 @@ export default function HistoryPage() {
     }
   };
 
-  const onSearchClick = ({ target: { name } }) => {
-    switch (name) {
+  const onSearchClick = e => {
+    e.preventDefault();
+    switch (e.target.name) {
       case 'id':
         return dispatch(fetchOrderById(orderId));
       case 'email':
@@ -102,8 +100,10 @@ export default function HistoryPage() {
         <Form.Group className={styles.Form__Group} controlId="phone">
           <Form.Label>Phone</Form.Label>
           <Form.Control
-            type="phone"
+            type="tel"
             name="phone"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            title="XXX-XXX-XXXX"
             placeholder="Enter your phone"
             value={orderPhone}
             onChange={handleChange}
@@ -116,6 +116,7 @@ export default function HistoryPage() {
           name="phone"
           className={styles.Form__Button}
           disabled={!orderPhone}
+          type="submit"
         >
           {!ordersLoading && <span>Search</span>}
           {ordersLoading && <Spinner animation="border" as="span" size="sm" />}
