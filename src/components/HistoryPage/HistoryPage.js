@@ -33,18 +33,15 @@ export default function HistoryPage() {
     }
   };
 
-  const onSearchClick = e => {
+  const onSearchIdClick = () => {
+    dispatch(fetchOrderById(orderId));
+  };
+  const onSearchEmailClick = () => {
+    dispatch(fetchOrders({ orderEmail }));
+  };
+  const onSearchPhoneClick = e => {
     e.preventDefault();
-    switch (e.target.name) {
-      case 'id':
-        return dispatch(fetchOrderById(orderId));
-      case 'email':
-        return dispatch(fetchOrders({ orderEmail }));
-      case 'phone':
-        return dispatch(fetchOrders({ orderPhone }));
-      default:
-        return;
-    }
+    dispatch(fetchOrders({ orderPhone }));
   };
 
   return (
@@ -66,7 +63,7 @@ export default function HistoryPage() {
         </Form.Group>
         <Button
           variant="primary"
-          onClick={onSearchClick}
+          onClick={onSearchIdClick}
           name="id"
           className={styles.Form__Button}
           disabled={!orderId}
@@ -88,7 +85,7 @@ export default function HistoryPage() {
         </Form.Group>
         <Button
           variant="primary"
-          onClick={onSearchClick}
+          onClick={onSearchEmailClick}
           name="email"
           className={styles.Form__Button}
           disabled={!orderEmail}
@@ -112,7 +109,7 @@ export default function HistoryPage() {
         </Form.Group>
         <Button
           variant="primary"
-          onClick={onSearchClick}
+          onClick={onSearchPhoneClick}
           name="phone"
           className={styles.Form__Button}
           disabled={!orderPhone}
@@ -122,7 +119,9 @@ export default function HistoryPage() {
           {ordersLoading && <Spinner animation="border" as="span" size="sm" />}
         </Button>
       </Form>
+
       {ordersError && <ErrorMessage message={`No data by your query`} />}
+
       <Table striped bordered hover>
         <thead>
           <tr>
