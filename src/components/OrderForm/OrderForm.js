@@ -96,7 +96,7 @@ export default function OrderForm() {
       </Form>
       {addOrderError && <ErrorMessage message={addOrderError} />}
       {addedOrder._id && (
-        <h2>{`Thank you for your order. Orders Id=${addedOrder._id}`}</h2>
+        <h2>{`Thank you for your order. Orders Id is ${addedOrder._id}`}</h2>
       )}
     </div>
   );

@@ -55,7 +55,7 @@ export default function Goods() {
                   onMouseOut={handleMouseOut}
                   value={e._id}
                 >
-                  add to Cart
+                  Add to Cart
                 </Button>
                 {isHoveringBtnId === e._id && (
                   <Message message={`You can add this ${e.name} to the cart`} />
