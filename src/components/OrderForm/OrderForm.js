@@ -9,11 +9,13 @@ import {
   changePhone,
   changeAddress,
 } from '../../redux/orders/orders-actions';
+
 import { Form } from 'react-bootstrap';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 import styles from './OrderForm.module.css';
 
+console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
 export default function OrderForm() {
   const dispatch = useDispatch();
   const [mapContainer, setMapContainer] = useState(null);
@@ -50,7 +52,7 @@ export default function OrderForm() {
     disableDefaultUI: true,
     zoomControl: true,
     zoomControlOptions: {
-      position: 0, // Right top
+      position: 3, // Right top
     },
   };
 
@@ -79,7 +81,7 @@ export default function OrderForm() {
   return (
     <div>
       <GoogleMapsProvider
-        googleMapsAPIKey="AIzaSyBJj2Hri6OYehvSzAyAgRYR5BxF5JwOHb4"
+        googleMapsAPIKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
         mapContainer={mapContainer}
         mapOptions={mapOptions}
       >
