@@ -15,7 +15,6 @@ import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 import styles from './OrderForm.module.css';
 
-console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
 export default function OrderForm() {
   const dispatch = useDispatch();
   const [mapContainer, setMapContainer] = useState(null);
