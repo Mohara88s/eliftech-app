@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/eliftech-app/static/css/main.a6afc977.css",
-    "main.js": "/eliftech-app/static/js/main.d6037459.js",
-    "ShoppingCartView.css": "/eliftech-app/static/css/ShoppingCartView.978d4659.chunk.css",
-    "ShoppingCartView.js": "/eliftech-app/static/js/ShoppingCartView.1313580d.chunk.js",
-    "HistoryView.css": "/eliftech-app/static/css/HistoryView.3e9344be.chunk.css",
-    "HistoryView.js": "/eliftech-app/static/js/HistoryView.34fd8ed5.chunk.js",
+    "main.css": "/eliftech-app/static/css/main.c6ebbcbd.css",
+    "main.js": "/eliftech-app/static/js/main.5b5a5cd1.js",
+    "ShoppingCartView.css": "/eliftech-app/static/css/ShoppingCartView.8d87b7b9.chunk.css",
+    "ShoppingCartView.js": "/eliftech-app/static/js/ShoppingCartView.61eea7d1.chunk.js",
+    "HistoryView.css": "/eliftech-app/static/css/HistoryView.ca7e03a9.chunk.css",
+    "HistoryView.js": "/eliftech-app/static/js/HistoryView.378ef7d0.chunk.js",
     "CouponsView.js": "/eliftech-app/static/js/CouponsView.8a2cb4d9.chunk.js",
-    "NotFoundView.css": "/eliftech-app/static/css/NotFoundView.18d334c5.chunk.css",
-    "NotFoundView.js": "/eliftech-app/static/js/NotFoundView.3ba02384.chunk.js",
+    "NotFoundView.css": "/eliftech-app/static/css/NotFoundView.ced0a7da.chunk.css",
+    "NotFoundView.js": "/eliftech-app/static/js/NotFoundView.41a02bd1.chunk.js",
     "static/js/241.ad78b86e.chunk.js": "/eliftech-app/static/js/241.ad78b86e.chunk.js",
     "static/media/1.jpg": "/eliftech-app/static/media/1.eb88e210d6d84664b658.jpg",
     "index.html": "/eliftech-app/index.html",
-    "main.a6afc977.css.map": "/eliftech-app/static/css/main.a6afc977.css.map",
-    "main.d6037459.js.map": "/eliftech-app/static/js/main.d6037459.js.map",
-    "ShoppingCartView.978d4659.chunk.css.map": "/eliftech-app/static/css/ShoppingCartView.978d4659.chunk.css.map",
-    "ShoppingCartView.1313580d.chunk.js.map": "/eliftech-app/static/js/ShoppingCartView.1313580d.chunk.js.map",
-    "HistoryView.3e9344be.chunk.css.map": "/eliftech-app/static/css/HistoryView.3e9344be.chunk.css.map",
-    "HistoryView.34fd8ed5.chunk.js.map": "/eliftech-app/static/js/HistoryView.34fd8ed5.chunk.js.map",
+    "main.c6ebbcbd.css.map": "/eliftech-app/static/css/main.c6ebbcbd.css.map",
+    "main.5b5a5cd1.js.map": "/eliftech-app/static/js/main.5b5a5cd1.js.map",
+    "ShoppingCartView.8d87b7b9.chunk.css.map": "/eliftech-app/static/css/ShoppingCartView.8d87b7b9.chunk.css.map",
+    "ShoppingCartView.61eea7d1.chunk.js.map": "/eliftech-app/static/js/ShoppingCartView.61eea7d1.chunk.js.map",
+    "HistoryView.ca7e03a9.chunk.css.map": "/eliftech-app/static/css/HistoryView.ca7e03a9.chunk.css.map",
+    "HistoryView.378ef7d0.chunk.js.map": "/eliftech-app/static/js/HistoryView.378ef7d0.chunk.js.map",
     "CouponsView.8a2cb4d9.chunk.js.map": "/eliftech-app/static/js/CouponsView.8a2cb4d9.chunk.js.map",
-    "NotFoundView.18d334c5.chunk.css.map": "/eliftech-app/static/css/NotFoundView.18d334c5.chunk.css.map",
-    "NotFoundView.3ba02384.chunk.js.map": "/eliftech-app/static/js/NotFoundView.3ba02384.chunk.js.map",
+    "NotFoundView.ced0a7da.chunk.css.map": "/eliftech-app/static/css/NotFoundView.ced0a7da.chunk.css.map",
+    "NotFoundView.41a02bd1.chunk.js.map": "/eliftech-app/static/js/NotFoundView.41a02bd1.chunk.js.map",
     "241.ad78b86e.chunk.js.map": "/eliftech-app/static/js/241.ad78b86e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a6afc977.css",
-    "static/js/main.d6037459.js"
+    "static/css/main.c6ebbcbd.css",
+    "static/js/main.5b5a5cd1.js"
   ]
 }

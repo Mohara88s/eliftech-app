@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/NotFoundView.ced0a7da.chunk.css","mappings":"AAAA,yBACE,SACF","sources":["components/NotFound/NotFound.module.css"],"sourcesContent":[".heading {\r\n  color: red;\r\n}\r\n"],"names":[],"sourceRoot":""}
