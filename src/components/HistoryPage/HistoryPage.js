@@ -126,6 +126,7 @@ export default function HistoryPage() {
             <td>client</td>
             <td>email</td>
             <td>phone</td>
+            <td>address</td>
             <td>total price</td>
             <td>shop</td>
             <td>date</td>
@@ -138,6 +139,7 @@ export default function HistoryPage() {
               <td>{e.name}</td>
               <td>{e.email}</td>
               <td>{e.phone}</td>
+              <td>{e.address}</td>
               <td>{e.price}</td>
               <td>{e.shop.name}</td>
               <td>

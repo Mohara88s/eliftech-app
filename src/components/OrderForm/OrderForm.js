@@ -1,13 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useCallback, useState, useEffect } from 'react';
 import { GoogleMapsProvider } from '@ubilabs/google-maps-react-hooks';
+import GeocodingService from '../GeocodingService/GeocodingService';
+import PlacesAutocompleteService from '../PlacesAutocompleteService/PlacesAutocompleteService';
 
 import ordersSelectors from '../../redux/orders/orders-selectors';
 import {
   changeName,
   changeEmail,
   changePhone,
-  changeAddress,
 } from '../../redux/orders/orders-actions';
 
 import { Form } from 'react-bootstrap';
@@ -58,7 +59,6 @@ export default function OrderForm() {
   const name = useSelector(ordersSelectors.getName);
   const email = useSelector(ordersSelectors.getEmail);
   const phone = useSelector(ordersSelectors.getPhone);
-  const address = useSelector(ordersSelectors.getAddresss);
   const addOrderError = useSelector(ordersSelectors.getAddOrderErrors);
   const addedOrder = useSelector(ordersSelectors.getAddedOrder);
 
@@ -70,8 +70,6 @@ export default function OrderForm() {
         return dispatch(changeEmail(value));
       case 'phone':
         return dispatch(changePhone(value));
-      case 'address':
-        return dispatch(changeAddress(value));
       default:
         return;
     }
@@ -83,9 +81,14 @@ export default function OrderForm() {
         googleMapsAPIKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
         mapContainer={mapContainer}
         mapOptions={mapOptions}
+        libraries={['places']}
       >
         <React.StrictMode>
           <div ref={mapRef} style={{ height: '300px' }} />
+          <GeocodingService
+            initialPosition={{ lat: latitude, lng: longitude }}
+          />
+          <PlacesAutocompleteService />
         </React.StrictMode>
       </GoogleMapsProvider>
 
@@ -121,17 +124,6 @@ export default function OrderForm() {
             title="XXX-XXX-XXXX"
             placeholder="Enter your phone"
             value={phone}
-            onChange={handleChange}
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="address">
-          <Form.Label>Address</Form.Label>
-          <Form.Control
-            type="address"
-            name="address"
-            placeholder="Enter your address"
-            value={address}
             onChange={handleChange}
           />
         </Form.Group>
